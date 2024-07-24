@@ -26,7 +26,9 @@ export class MyPanel extends LitElement {
         <div class="title">
           ${this.title}
         </div>
-        <div class="body">CONTENT</div>
+        <div class="body">
+          <slot>Default Content</slot>
+        </div>
       </div>
     `;
   }
