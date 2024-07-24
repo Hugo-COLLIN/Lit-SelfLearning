@@ -6,9 +6,10 @@ export class MyPanel extends LitElement {
   static styles = css`
   .title {
     background: aquamarine;
+    color: var(--my-panel-primary-color, black);
     font-size: 20px;
     font-weight: bold;
-      border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
   }
       
   .body {
