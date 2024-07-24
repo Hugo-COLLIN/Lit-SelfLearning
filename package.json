@@ -1,8 +1,13 @@
 {
   "name": "lit-selflearning",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "main": "dist/my-panel.es.js",
+  "exports": {
+    ".": "./dist/my-panel.es.js"
+  },
+  "types": "dist/my-panel.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

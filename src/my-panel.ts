@@ -54,3 +54,10 @@ export class MyPanel extends LitElement {
     `;
   }
 }
+
+// used to publish the component on npm
+declare global {
+  interface HTMLElementTagNameMap {
+    'my-panel': MyPanel;
+  }
+}
