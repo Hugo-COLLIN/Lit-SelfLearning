@@ -29,7 +29,7 @@ export class MyPanel extends LitElement {
   render() {
     return html`
       <div>
-        <div class="title">
+        <div class="title" @click=${() => this.opened = !this.opened}>
           ${this.title} - ${this.opened ? "Opened" : "Closed"}
         </div>
         <div class="body">
