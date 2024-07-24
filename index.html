@@ -15,7 +15,7 @@
   </head>
   <body>
     <h1>Hey!</h1>
-    <my-panel title="PROFILE" opened>
+    <my-panel title="PROFILE" opened icon="❤️">
       <p slot="header">My Header</p>
     </my-panel>
     <my-panel>
@@ -23,4 +23,11 @@
       <input type="text" />
     </my-panel>
   </body>
+
+  <script>
+    const el = document.querySelector('my-panel');
+    el.addEventListener('icon-click', () => {
+      console.log('icon-click');
+    });
+  </script>
 </html>

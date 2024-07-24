@@ -10,6 +10,15 @@ export class MyPanel extends LitElement {
   @property({type: Boolean})
   opened = false;
 
+  @property({type: String})
+  icon = '';
+
+  private onIconClickHandler(e: MouseEvent) {
+    e.stopPropagation();
+    this.dispatchEvent(new CustomEvent('icon-click', {bubbles: true, composed: true}));
+  }
+
+
   static styles = css`
   .title {
     background: aquamarine;
@@ -31,6 +40,7 @@ export class MyPanel extends LitElement {
       <div>
         <div class="title" @click=${() => this.opened = !this.opened}>
           ${this.title} - ${this.opened ? "Opened" : "Closed"}
+          <div @click=${this.onIconClickHandler}>${this.icon}</div>
         </div>
         <div class="body">
           ${when(
