@@ -1,5 +1,5 @@
 import {css, html, LitElement} from "lit";
-import {customElement} from "lit/decorators.js";
+import {customElement, property} from "lit/decorators.js";
 
 @customElement("my-panel")
 export class MyPanel extends LitElement {
@@ -18,10 +18,14 @@ export class MyPanel extends LitElement {
   }
   `
 
+  @property({type: String}) title = "Default Title";
+
   render() {
     return html`
       <div>
-        <div class="title"> TITLE</div>
+        <div class="title">
+          ${this.title}
+        </div>
         <div class="body">CONTENT</div>
       </div>
     `;
