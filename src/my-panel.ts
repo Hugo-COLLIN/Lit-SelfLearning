@@ -1,5 +1,6 @@
 import {css, html, LitElement} from "lit";
 import {customElement, property} from "lit/decorators.js";
+import {when} from "lit/directives/when.js";
 
 @customElement("my-panel")
 export class MyPanel extends LitElement {
@@ -32,6 +33,11 @@ export class MyPanel extends LitElement {
           ${this.title} - ${this.opened ? "Opened" : "Closed"}
         </div>
         <div class="body">
+          ${when(
+            this.opened, 
+              () => html`<slot name="header">Header Content</slot>`,
+              () => html`closed`
+          )}
           <slot>Default Content</slot>
         </div>
       </div>
